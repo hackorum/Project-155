@@ -17,7 +17,12 @@ AFRAME.registerComponent("coin", {
     coin.setAttribute("position", position);
     coin.setAttribute("rotation", { x: 0, y: 180, z: 0 });
     coin.setAttribute("scale", { x: 15, y: 15, z: 15 });
-    coin.setAttribute("gltf-model", "./assets/coin/scene.gltf");
+    coin.setAttribute("geometry", { primitive: "circle", radius: 0.06 });
+    coin.setAttribute("material", {
+      color: "orange",
+      opacity: 1,
+      side: "double",
+    });
     coin.setAttribute("static-body", { shape: "sphere", sphereRadius: 1 });
     island.appendChild(coin);
   },
